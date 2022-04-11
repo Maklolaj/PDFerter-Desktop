@@ -1,0 +1,28 @@
+{
+  "root": "apps/pdferter-e2e",
+  "sourceRoot": "apps/pdferter-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/pdferter-e2e/cypress.json",
+        "devServerTarget": "pdferter:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "pdferter:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/pdferter-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["pdferter"]
+}

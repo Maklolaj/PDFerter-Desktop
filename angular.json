@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "pdferter": "apps/pdferter",
+    "pdferter-e2e": "apps/pdferter-e2e"
+  }
+}
