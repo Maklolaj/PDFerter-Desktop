@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/pdferter",
         "index": "apps/pdferter/src/index.html",
@@ -14,8 +16,13 @@
         "polyfills": "apps/pdferter/src/polyfills.ts",
         "tsConfig": "apps/pdferter/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/pdferter/src/favicon.ico", "apps/pdferter/src/assets"],
-        "styles": ["apps/pdferter/src/styles.scss"],
+        "assets": [
+          "apps/pdferter/src/favicon.ico",
+          "apps/pdferter/src/assets"
+        ],
+        "styles": [
+          "apps/pdferter/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -61,7 +68,10 @@
           "browserTarget": "pdferter:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/pdferter/proxy.conf.json"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
@@ -80,7 +90,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/pdferter"],
+      "outputs": [
+        "coverage/apps/pdferter"
+      ],
       "options": {
         "jestConfig": "apps/pdferter/jest.config.js",
         "passWithNoTests": true
