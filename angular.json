@@ -1,7 +1,6 @@
 {
   "version": 2,
   "projects": {
-    "ls-pdferter-desktop": "apps/ls/pdferter-desktop",
     "pdferter": "apps/pdferter",
     "pdferter-e2e": "apps/pdferter-e2e"
   }

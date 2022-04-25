@@ -21,23 +21,14 @@ function createWindow() {
   mainWindow.maximize();
   mainWindow.webContents.openDevTools()
 
- 
 
-
-
-
-   mainWindow.loadURL(`file://${__dirname}/src/index.html`)  // pusty app-root
-
+  mainWindow.loadFile(`./dist/index.html`) 
   
-  // mainWindow.loadURL(`file://${__dirname}/dist/pdferter/index.html`) // puste body (nic sie nie ładuje))
+   mainWindow.on("did-fail-load", function() {
+    console.log("did-fail-load");
 
-  
-
-
-
-
-
-
+    mainWindow.loadUrl(`file://${__dirname}/src/index.html`);
+  });
 
 
   mainWindow.on('closed', function () {
@@ -61,6 +52,13 @@ app.on('window-all-closed', function () {
     app.quit()
   }
 })
+
+app.on('certificate-error', function(event, webContents, url, error, 
+  certificate, callback) {
+    console.log("certificate error")
+      event.preventDefault();
+      callback(true);
+});
 
 app.on('activate', function () {
   // On OS X it's common to re-create a window in the app when the
